@@ -3,8 +3,8 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('kiss')
-    .setDescription('Besa a un usuario.')
+    .setName('hug')
+    .setDescription('Abraza a un usuario.')
     .addUserOption( option =>
       option.setName('usuario')
                   .setDescription('Menciona a un Usuario.')
@@ -15,10 +15,10 @@ module.exports = {
 
       const member = interaction.options.getUser('usuario') || interaction.user
       
-      const url = await anime.kiss();
+      const url = await anime.hug();
 
       const embed = new EmbedBuilder()
-        .setDescription(`${interaction.member.toString()} beso a ${member.toString()}`)
+        .setDescription(`${interaction.member.toString()} abrazo a ${member.toString()}`)
        .setColor("DarkButNotBlack")
        .setImage(url)
       
